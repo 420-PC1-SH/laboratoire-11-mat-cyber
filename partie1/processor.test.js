@@ -1,0 +1,20 @@
+const processor = require('./processor.js');
+
+describe("transmission processor", function() {
+
+    test("take a string and returns an object", function() {
+        let result = processor("9701::<489584872710>");
+
+        expect(typeof result).toEqual("object");
+    });
+
+    test("return -1 if '::' not found", function (){
+        let result = processor("9701<489584872710>");
+        expect(result).toEqual(-1);
+    });
+
+    test("returns id in object", function () {
+        let result = processor("9701::<489584872710>");
+        expect(result.id).not.toEqual(undefined);
+    });
+});
