@@ -22,4 +22,9 @@ describe("transmission processor", function() {
         let result = processor("9701::<489584872710>");
         expect(typeof result.id).toEqual("number");
     });
+
+    test("returns rawData in object", function () {
+        let result = processor("9701::<489584872710>");
+        expect(result.rawData).not.toEqual(undefined);
+    });
 });
