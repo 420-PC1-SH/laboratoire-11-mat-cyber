@@ -5,7 +5,7 @@ function processor(transmission){
 
     let parts = transmission.split("::");
     return {
-        id: parts[0]
+        id: Number(parts[0])
     };
 }
 module.exports = processor;
