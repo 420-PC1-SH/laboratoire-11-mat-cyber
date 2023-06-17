@@ -30,8 +30,8 @@ describe("transmission processor", function() {
 
     test("returns -1 if rawData don't start and end with '<' and '>'", function() {
         let result = processor("9701::<489584872710");
-        expect(result.rawData).toEqual(-1);
+        expect(result).toEqual(-1);
         result = processor("9701::489584872710>");
-        expect(result.rawData).toEqual(-1);
+        expect(result).toEqual(-1);
     })
 });
